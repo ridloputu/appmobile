@@ -83,7 +83,7 @@ $(document).on("click", "#login", function() {
   var gender=$("#gender").val();//get value gender
   var age=$("#age").val();//get value age
   var pack_data={username:username,password:password,gender:gender,age:age};
-  var url='http://127.0.0.1/testmobile/api/login.php?jsoncallback=?';
+  var url='http:www.balldee.com/appmobile/api/login.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
