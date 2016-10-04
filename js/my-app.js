@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$( document ).ready(function() {  
 init();
 });
 function init(){
@@ -52,7 +52,7 @@ $(document).on("click", "#comfirm-regis", function() {
     var check_agree=$('#check_agree').is(':checked');
 if(password==re_password && check_agree==true){
     var pack_data={username:username,password:password,gender:gender,age:age};
-    var url='http://127.0.0.1/testmobile/api/regis.php?jsoncallback=?';
+    var url='http://www.balldee.com/appmobile/api/regis.php?jsoncallback=?';
     $.getJSON( url, {
       pack_data:pack_data,
       format: 'json'
@@ -83,7 +83,7 @@ $(document).on("click", "#login", function() {
   var gender=$("#gender").val();//get value gender
   var age=$("#age").val();//get value age
   var pack_data={username:username,password:password,gender:gender,age:age};
-  var url='http:www.balldee.com/appmobile/api/login.php?jsoncallback=?';
+  var url='http://www.balldee.com/appmobile/api/login.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
@@ -190,7 +190,7 @@ $("#appview").append(content);
 //chart
 $(document).on("click", "#result", function() {
   var pack_data={username:"test"};
-  var url='http://127.0.0.1/testmobile/api/getchart.php?jsoncallback=?';
+  var url='http://www.balldee.com/appmobile/api/getchart.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
@@ -236,3 +236,5 @@ $("#appview").html("");
 var content='<div id="chart-container"></div>';
 $("#appview").append(content);
 }
+
+
