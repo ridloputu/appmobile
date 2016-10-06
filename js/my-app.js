@@ -20,10 +20,11 @@ $("#appview").append(content);
 }
 
 
-$(document).on("click", "#profile", function() {
+$(document).on("click", "#m-menu", function() {
   $("#appview").html("");
   var content='<ul data-role="listview" class="ui-listview"> \
-  <li class="ui-first-child"><a href="#" id="logout" class="ui-btn ui-btn-icon-right ui-icon-carat-r">logout</a></li>   \
+  <li class="ui-first-child"><a href="#" id="profile" class="ui-btn ui-btn-icon-right ui-icon-carat-r">profile</a></li>   \
+  <li><a href="#" id="logout" class="ui-btn ui-btn-icon-right ui-icon-carat-r">logout</a></li>   \
   </ul>';
   $("#appview").append(content);//apend to add content
 });//event click logout
@@ -52,7 +53,7 @@ $(document).on("click", "#comfirm-regis", function() {
     var check_agree=$('#check_agree').is(':checked');
 if(password==re_password && check_agree==true){
     var pack_data={username:username,password:password,gender:gender,age:age};
-    var url='http://www.balldee.com/appmobile/api/regis.php?jsoncallback=?';
+    var url='http://www.balldee.com/public_html/appmobile/api/regis.php?jsoncallback=?';
     $.getJSON( url, {
       pack_data:pack_data,
       format: 'json'
@@ -83,7 +84,7 @@ $(document).on("click", "#login", function() {
   var gender=$("#gender").val();//get value gender
   var age=$("#age").val();//get value age
   var pack_data={username:username,password:password,gender:gender,age:age};
-  var url='http://www.balldee.com/appmobile/api/login.php?jsoncallback=?';
+  var url='http://www.balldee.com/public_html/appmobile/api/login.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
@@ -105,7 +106,13 @@ $("#appview").append(content);
 });//event click  login
 
 
-
+$("#notif").click(function() {
+    $("#noti_head").html( "");
+    $("#noti_head").html( "Fail !");
+    $("#noti_body").html( "");
+    $("#noti_body").html( "You Lose");
+    $.mobile.changePage("#notification");
+  });
 
 // navbar page
 
@@ -133,44 +140,6 @@ var content='<ul data-role="listview" class="ui-listview"> \
 $("#appview").append(content);//apend to add content
 });//event click  agenda
 
-$(document).on("click", "#li1", function() {
-$("#appview").html("");
-var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
-$("#appview").append(content);
-});//event click  agenda
-
-$(document).on("click", "#li2", function() {
-$("#appview").html("");
-var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
-$("#appview").append(content);
-});//event click  agenda
-
-$(document).on("click", "#li3", function() {
-$("#appview").html("");
-var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
-$("#appview").append(content);
-});//event click  agenda
-
-$(document).on("click", "#li4", function() {
-$("#appview").html("");
-var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
-$("#appview").append(content);
-});//event click  agenda
-
-$(document).on("click", "#li5", function() {
-$("#appview").html("");
-var content='<img src="http://www.gbspaloke.be/images/beelden/construction1.gif" style="width:100%;">';
-$("#appview").append(content);
-});//event click  agenda
-
-
-
-
-
-
-
-
-
 
 
 $(document).on("click", "#btn_check", function() {
@@ -190,7 +159,7 @@ $("#appview").append(content);
 //chart
 $(document).on("click", "#result", function() {
   var pack_data={username:"test"};
-  var url='http://www.balldee.com/appmobile/api/getchart.php?jsoncallback=?';
+  var url='http://www.balldee.com/public_html/appmobile/api/getchart.php?jsoncallback=?';
   $.getJSON( url, {
     pack_data:pack_data,
     format: 'json'
